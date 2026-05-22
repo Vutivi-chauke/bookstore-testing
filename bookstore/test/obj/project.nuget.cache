@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "5LdsTlFMJK0=",
+  "dgSpecHash": "Wu37Clk9pWs=",
   "success": true,
   "projectFilePath": "/workspaces/bookstore-testing/bookstore/test/test.csproj",
   "expectedPackageFiles": [
+    "/home/codespace/.nuget/packages/anglesharp/1.1.2/anglesharp.1.1.2.nupkg.sha512",
     "/home/codespace/.nuget/packages/coverlet.collector/6.0.4/coverlet.collector.6.0.4.nupkg.sha512",
     "/home/codespace/.nuget/packages/microsoft.applicationinsights/2.22.0/microsoft.applicationinsights.2.22.0.nupkg.sha512",
     "/home/codespace/.nuget/packages/microsoft.codecoverage/17.14.0/microsoft.codecoverage.17.14.0.nupkg.sha512",
@@ -18,7 +19,10 @@
     "/home/codespace/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
     "/home/codespace/.nuget/packages/nunit/4.3.2/nunit.4.3.2.nupkg.sha512",
     "/home/codespace/.nuget/packages/nunit.analyzers/4.7.0/nunit.analyzers.4.7.0.nupkg.sha512",
-    "/home/codespace/.nuget/packages/nunit3testadapter/5.0.0/nunit3testadapter.5.0.0.nupkg.sha512"
+    "/home/codespace/.nuget/packages/nunit3testadapter/5.0.0/nunit3testadapter.5.0.0.nupkg.sha512",
+    "/home/codespace/.nuget/packages/selenium.webdriver/4.44.0/selenium.webdriver.4.44.0.nupkg.sha512",
+    "/home/codespace/.nuget/packages/sharpziplib/1.4.2/sharpziplib.1.4.2.nupkg.sha512",
+    "/home/codespace/.nuget/packages/webdrivermanager/2.17.7/webdrivermanager.2.17.7.nupkg.sha512"
   ],
   "logs": []
 }
