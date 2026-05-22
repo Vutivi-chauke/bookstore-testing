@@ -10,29 +10,52 @@ public class GoogleTestSearch
     [Test]
     public void UserJourney()
     {
-        IWebDriver driver = InitialiseWebDriver(); 
+        IWebDriver driver = InitialiseWebDriver();
 
-        OpenGoogleSearchPage(driver); 
-        EnterSearchText(driver, "Selenium"); 
-        ClickSearchButton(driver); 
-        ViewSearchResultsPage(driver, "Selenium"); 
+        OpenBookStore(driver);
+        EnterSearchText(driver, "Selenium");
 
-        driver.Quit(); 
+        driver.Quit();
     }
 
     private static IWebDriver InitialiseWebDriver()
     {
-        IWebDriver driver = new ChromeDriver(); 
-        driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(500); 
+        var options = new ChromeOptions();
+
+        options.AddArgument("--headless");
+        options.AddArgument("--no-sandbox");
+        options.AddArgument("--disable-dev-shm-usage");
+        options.AddArgument("--disable-gpu");
+        options.AddArgument("--window-size=1920,1080");
+
+        IWebDriver driver = new ChromeDriver(options);
+
+        driver.Manage().Timeouts().ImplicitWait =
+            TimeSpan.FromSeconds(5);
+
         return driver;
     }
 
     private static void OpenBookStore(IWebDriver driver)
     {
-        driver.Navigate().GoToUrl("automationbookstore.dev"); 
-        var title = driver.Title; 
-        Assert.That(title, Is.EqualTo("Automation Bookstore")); 
+        driver.Navigate().GoToUrl("https://automationbookstore.dev");
+
+        var title = driver.Title;
+
+        Assert.That(title,
+            Is.EqualTo("Automation Bookstore"));
     }
 
-    
+    private static void EnterSearchText(
+        IWebDriver driver,
+        string text)
+    {
+        var searchField =
+            driver.FindElement(By.Id("searchBar"));
+
+        searchField.SendKeys(text);
+
+        Assert.That(searchField.GetAttribute("value"),
+            Is.EqualTo(text));
+    }
 }
